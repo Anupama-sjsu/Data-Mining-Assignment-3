@@ -1,5 +1,9 @@
 # Data-Mining-Assignment-3
 ## Approximate Nearest Neighbor Search
+### **Colab Link:** https://colab.research.google.com/drive/1mGISHtLsUYK_XHsQPIVvMvnbS182rsDt?usp=sharing
+
+
+![68747470733a2f2f7261772e6769746875622e636f6d2f73706f746966792f616e6e6f792f6d61737465722f616e6e2e706e67](https://user-images.githubusercontent.com/70232769/143732416-1013afaa-ad75-47b0-bc50-43a4e65ec5e6.png)
 
 Approximate Nearest Neighbor techniques speed up the search by preprocessing the data into an efficient index and are often tackled using these phases:
 
