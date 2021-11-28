@@ -16,13 +16,13 @@ The following methods are implemented as a part of Approximate Nearest Neighbor 
 - **Vector Encoding Using Quantization - Product Quantization:** Quantization is a technique to reduce dataset size (from linear) by defining a function (quantizer) that encodes our data into a compact approximated representation. we can reduce the size of the dataset by replacing every vector with a leaner approximated representation of the vectors (using quantizer) in the encoding phase.One way to achieve a leaner approximated representation is to give similar vectors to the same representation. This can be done by clustering similar vectors and represent each of those in the same manner (the centroid representation), the most popular way to do so is using k-means. 
 
 - **Vector Encoding Using Trees:** Tree-based algorithms are one of the most common strategies when it comes to ANN. This constructs forests- a collection of trees, as their data structure by splitting the dataset into subsets. One of the most prominent solutions out there is Annoy, which uses trees to enable Spotify’ music recommendations. In Annoy, in order to construct the index we create a forest and tree is constructed in the following way, we pick two points at random and split the space into two by their hyperplane, we keep splitting into the subspaces recursively until the points associated with a node is small enough. 
-- _number_of_trees_ — the number of binary trees we build, a larger value will give more accurate results, but larger indexes.
-- _search_k_ — the number of binary trees we search for each point, a larger value will give more accurate results, but will take a longer time to return.
+ - _number_of_trees_ — the number of binary trees we build, a larger value will give more accurate results, but larger indexes.
+ - _search_k_ — the number of binary trees we search for each point, a larger value will give more accurate results, but will take a longer time to return.
 
 - **Exhaustive Search:** 
 - **Hierarchical Navigable Small World:**  In order to reduce the search time on a graph we would want our graph to have an average path. Many real-world graphs on average are highly clustered and tend to have nodes that are close to each other which are formally called small-world graph:
- - highly transitive (community structure) it’s often hierarchical
- - small average distance ~log(N).
+  - highly transitive (community structure) it’s often hierarchical
+  - small average distance ~log(N).
 
 
 **Picking The Right Approximate Nearest Neighbours Algorithm**
@@ -34,7 +34,15 @@ Evaluating which algorithms should be used and when is deeply depends on the use
 - Access Patterns — Number of queries, batch or not, and whether we should update the index.
 
 
-
+_Product Quantization With Inverted File Pros_
+		The only method with sub-linear space, great compression ratio (log(k) bits per vector.
+		We can tune the parameters to change the accuracy/speed tradeoff.
+		We can tune the parameters to change the space/accuracy tradeoff.
+		Support batch queries.
+P_roduct Quantization With Inverted File Cons_
+		The exact nearest neighbor might be across the boundary to one of the neighboring cells.
+		Cant incrementally add points to it.
+		The exact nearest neighbor might be across the boundary to one of the neighboring cells.
 
 _LSH Pros_
 Data characteristics such as data distribution are not needed to generate these random hash functions.
