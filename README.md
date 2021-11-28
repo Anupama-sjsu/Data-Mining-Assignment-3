@@ -16,13 +16,14 @@ The following methods are implemented as a part of Approximate Nearest Neighbor 
 - **Vector Encoding Using Quantization - Product Quantization:** Quantization is a technique to reduce dataset size (from linear) by defining a function (quantizer) that encodes our data into a compact approximated representation. we can reduce the size of the dataset by replacing every vector with a leaner approximated representation of the vectors (using quantizer) in the encoding phase.One way to achieve a leaner approximated representation is to give similar vectors to the same representation. This can be done by clustering similar vectors and represent each of those in the same manner (the centroid representation), the most popular way to do so is using k-means. 
 
 - **Vector Encoding Using Trees:** Tree-based algorithms are one of the most common strategies when it comes to ANN. This constructs forests- a collection of trees, as their data structure by splitting the dataset into subsets. One of the most prominent solutions out there is Annoy, which uses trees to enable Spotify’ music recommendations. In Annoy, in order to construct the index we create a forest and tree is constructed in the following way, we pick two points at random and split the space into two by their hyperplane, we keep splitting into the subspaces recursively until the points associated with a node is small enough. 
- - _number_of_trees_ — the number of binary trees we build, a larger value will give more accurate results, but larger indexes.
- - _search_k_ — the number of binary trees we search for each point, a larger value will give more accurate results, but will take a longer time to return.
+ 	- _number_of_trees_ — the number of binary trees we build, a larger value will give more accurate results, but larger indexes.
+ 	- _search_k_ — the number of binary trees we search for each point, a larger value will give more accurate results, but will take a longer time to return.
 
-- **Exhaustive Search:** 
+- **Exhaustive Search:** any search process in which every item of a set is checked before a decision is made about the presence or absence of a target item. This process in known to be very thorough and exhaustive as the name suggests. It is time consuming and very often causes a heavy load on the memory.
+
 - **Hierarchical Navigable Small World:**  In order to reduce the search time on a graph we would want our graph to have an average path. Many real-world graphs on average are highly clustered and tend to have nodes that are close to each other which are formally called small-world graph:
-  - highly transitive (community structure) it’s often hierarchical
-  - small average distance ~log(N).
+  	- highly transitive (community structure) it’s often hierarchical
+  	- small average distance ~log(N).
 
 
 **Picking The Right Approximate Nearest Neighbours Algorithm**
