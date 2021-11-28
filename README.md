@@ -81,3 +81,8 @@ No support for GPU processing.
 No support for batch processing, so in order to increase throughput “further hacking is required”.
 Cant incrementally add points to it (annoy2 tries to fix this).
 
+**References:**
+
+- https://towardsdatascience.com/comprehensive-guide-to-approximate-nearest-neighbors-algorithms-8b94f057d6b6
+- https://github.com/spotify/annoy
+- https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/
