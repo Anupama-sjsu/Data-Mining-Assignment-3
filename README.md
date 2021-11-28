@@ -40,7 +40,8 @@ _Product Quantization With Inverted File Pros_
 		We can tune the parameters to change the accuracy/speed tradeoff.
 		We can tune the parameters to change the space/accuracy tradeoff.
 		Support batch queries.
-P_roduct Quantization With Inverted File Cons_
+		
+_Product Quantization With Inverted File Cons_
 		The exact nearest neighbor might be across the boundary to one of the neighboring cells.
 		Cant incrementally add points to it.
 		The exact nearest neighbor might be across the boundary to one of the neighboring cells.
@@ -49,6 +50,7 @@ _LSH Pros_
 Data characteristics such as data distribution are not needed to generate these random hash functions.
 The accuracy of the approximate search can be tuned without rebuilding the data structure.
 Good theoretical guarantees of sub-linear query time.
+
 _LSH Cons_
 In practice, the algorithm MIGHT runs slower than a linear scan.
 No support for GPU processing.
@@ -58,9 +60,20 @@ _Hierarchical Navigable Small World Graphs Pros_
 We can tune the parameters to change the accuracy/speed tradeoff.
 Support batch queries.
 The NSW algorithm has polylogarithmic time complexity and can outperform rival algorithms on many real-world datasets.
+
 _Hierarchical Navigable Small World Graphs Cons_
 The exact nearest neighbor might be across the boundary to one of the neighboring cells.
 Cant incrementally add points to it.
 Require quite a lot of RAM.
 
+_Annoy Pros_
+Decouple index creation from loading them, so you can pass around indexes as files and map them into memory quickly.
+We can tune the parameters to change the accuracy/speed tradeoff.
+It has the ability to use static files as indexes, this means you can share indexes across processes.
+
+_Annoy Cons_
+The exact nearest neighbor might be across the boundary to one of the neighboring cells.
+No support for GPU processing.
+No support for batch processing, so in order to increase throughput “further hacking is required”.
+Cant incrementally add points to it (annoy2 tries to fix this).
 
